@@ -14,10 +14,6 @@ int arr5[10000];
 int iter5=0;
 int arr6[10000];
 int iter6=0;
-int arr7[10000];
-int iter7=0;
-int arr8[10000];
-int iter8=0;
 int PointStartEnd(int *arr, int types, long long int ppl)//Array, Types People respectively
 {
     int Sptr=0;//Start Pointer
