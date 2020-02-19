@@ -1,7 +1,6 @@
 #include<iostream>
 #include<algorithm>
 using namespace std;
-int ans=0;//Answer Variable
 int arr1[10000];
 int iter1=0;//iterate1able for arr1
 int arr2[10000];
@@ -150,13 +149,37 @@ int PointIntCenter(int *arr, int types, long long int sum)
     return newsum;
 
 }
+int Compare(long long int O1, long long int O2, long long int O3, long long int O4, long long int O5, long long int O6)
+{
+    int best=0;
+    best=best>O1?best:O1;
+    best=best>O2?best:O2;
+    best=best>O3?best:O3;
+    best=best>O4?best:O4;
+    best=best>O5?best:O5;
+    best=best>O6?best:O6;
+    if(best==O1)
+        return 1;
+    else if(best==O2)
+        return 2;
+    else if(best==O3)
+        return 3;
+    else if(best==O4)
+        return 4;
+    else if(best==O5)
+        return 5;
+    else if(best==O6)
+        return 6;
+
+
+}
 int main()
 {
+    long long int O1=0,O2=0,O3=0,O4=0,O5=0,O6=0,ans;
     //Declaration of Variables
     long long int ppl=0;//Number of People
-    int types=0;//Types of People
+    int types=0,c,d;//Types of People
     int arr[100000];//Array Of Pizzas
-    int answer=0;
     //Input data
     cin>>ppl;
     cin>>types;
@@ -164,20 +187,52 @@ int main()
     {
         cin>>arr[i];
     }
-    //Functions Begin here
-    cout<<"Case 1"<<endl;
-    answer=PointStartEnd(arr, types, ppl);
-    cout<<answer<<endl;
-    for(int i=0;i<iter1;i++)
-    {
-        cout<<arr1[i]<<" ";
+    O1=PointStartEnd(arr,types,ppl);
+    O2=PointStartEnd2(arr,types,ppl);
+    O3=PointIntCenter(arr,types,ppl);
+    O4=PointIntCenter2(arr,types,ppl);
+    ans=Compare(O1,O2,O3,O4,O5,O6);
+    if(ans==1){
+        cout<<"\nSum: "<<O1;
+        cout<<"\n"<<iter1<<"\n";
+        for(int i=0;i<iter1;i++){
+            cout<<arr1[i]<<" ";
+        }
     }
-    cout<<"Case 2"<<endl;
-    answer=PointStartEnd2(arr, types, ppl);
-    cout<<answer<<endl;
-    for(int i=0;i<iter2;i++)
-    {
-        cout<<arr2[i]<<" ";
+    else if(ans==2){
+        cout<<"\nSum: "<<O2;
+        cout<<"\n"<<iter2<<"\n";
+        for(int i=0;i<iter2;i++){
+            cout<<arr2[i]<<" ";
+        }
+    }
+    else if(ans==3){
+        cout<<"\nSum: "<<O3;
+        cout<<"\n"<<iter3<<"\n";
+        for(int i=0;i<iter3;i++){
+            cout<<arr3[i]<<" ";
+        }
+    }
+    else if(ans==4){
+        cout<<"\nSum: "<<O4;
+        cout<<"\n"<<iter4<<"\n";
+        for(int i=0;i<iter4;i++){
+            cout<<arr4[i]<<" ";
+        }
+    }
+    else if(ans==5){
+        cout<<"\nSum: "<<O5;
+        cout<<"\n"<<iter5<<"\n";
+        for(int i=0;i<iter5;i++){
+            cout<<arr5[i]<<" ";
+        }
+    }
+    else if(ans==6){
+        cout<<"\nSum: "<<O6;
+        cout<<"\n"<<iter6<<"\n";
+        for(int i=0;i<iter6;i++){
+            cout<<arr6[i]<<" ";
+        }
     }
     return 0;
 }
