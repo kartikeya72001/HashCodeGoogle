@@ -30,9 +30,8 @@ int PointStartEnd(int *arr, int types, long long int ppl)//Array, Types People r
         }
         if(sumnew<ppl)
         {
-            arr1[iter1]=Sptr;
-            arr1[++iter1]=Eptr;
-            iter1++;
+            arr1[iter1++]=Eptr;
+            arr1[iter1++]=Sptr;
         }
         Sptr++;
         Eptr--;
