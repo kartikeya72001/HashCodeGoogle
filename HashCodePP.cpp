@@ -193,42 +193,36 @@ int main()
     O4=PointIntCenter2(arr,types,ppl);
     ans=Compare(O1,O2,O3,O4,O5,O6);
     if(ans==1){
-        cout<<"\nSum: "<<O1;
         cout<<"\n"<<iter1<<"\n";
         for(int i=0;i<iter1;i++){
             cout<<arr1[i]<<" ";
         }
     }
     else if(ans==2){
-        cout<<"\nSum: "<<O2;
         cout<<"\n"<<iter2<<"\n";
         for(int i=0;i<iter2;i++){
             cout<<arr2[i]<<" ";
         }
     }
     else if(ans==3){
-        cout<<"\nSum: "<<O3;
         cout<<"\n"<<iter3<<"\n";
         for(int i=0;i<iter3;i++){
             cout<<arr3[i]<<" ";
         }
     }
     else if(ans==4){
-        cout<<"\nSum: "<<O4;
         cout<<"\n"<<iter4<<"\n";
         for(int i=0;i<iter4;i++){
             cout<<arr4[i]<<" ";
         }
     }
     else if(ans==5){
-        cout<<"\nSum: "<<O5;
         cout<<"\n"<<iter5<<"\n";
         for(int i=0;i<iter5;i++){
             cout<<arr5[i]<<" ";
         }
     }
     else if(ans==6){
-        cout<<"\nSum: "<<O6;
         cout<<"\n"<<iter6<<"\n";
         for(int i=0;i<iter6;i++){
             cout<<arr6[i]<<" ";
