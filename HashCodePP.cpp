@@ -14,6 +14,7 @@ int arr5[10000];
 int iter5=0;
 int arr6[10000];
 int iter6=0;
+//Function1
 int PointStartEnd(int *arr, int types, long long int ppl)//Array, Types People respectively
 {
     int Sptr=0;//Start Pointer
@@ -48,6 +49,7 @@ int PointStartEnd(int *arr, int types, long long int ppl)//Array, Types People r
     sort(arr1,arr1+iter1);//Final sort Out of the Loop
     return sumnew;
 }
+//Function2
 int PointStartEnd2(int *arr, int types, long long int ppl)//Array, Types People respectively
 {
     int Sptr=0;//Start Pointer
@@ -81,6 +83,72 @@ int PointStartEnd2(int *arr, int types, long long int ppl)//Array, Types People 
     }
     sort(arr2,arr2+iter2);//Final sort Out of the Loop
     return sumnew;
+}
+//Function 3
+int PointIntCenter2(int *arr, int types, long long int sum)
+{
+    //Variables
+    int middleLeft = types/2-1;
+    int middleRight=types/2;
+    long long int newsum=0;
+    while(middleLeft>=0 && middleRight<types)
+    {
+        if(newsum == sum)//To check if got the correct sum
+        {
+            sort(arr4,arr4+iter3);
+            return newsum;
+        }
+        newsum+=arr[middleLeft]+arr[middleRight];
+        arr4[iter4++]=middleRight;
+        arr4[iter4++]=middleLeft;
+        if(newsum>sum)
+        {
+            newsum-=arr[middleLeft];
+            iter4--;
+        }
+        if(newsum>sum){
+            newsum-=arr[middleRight];
+            iter4--;
+        }
+        middleRight++;
+        middleLeft--;
+    }
+    sort(arr4,arr4+iter4);
+    return newsum;
+
+}
+//Function 4
+int PointIntCenter(int *arr, int types, long long int sum)
+{
+    //Variables
+    int middleLeft = types/2-1;
+    int middleRight=types/2;
+    long long int newsum=0;
+    while(middleLeft>=0 && middleRight<types)
+    {
+        if(newsum == sum)//To check if got the correct sum
+        {
+            sort(arr3,arr3+iter3);
+            return newsum;
+        }
+        newsum+=arr[middleLeft]+arr[middleRight];
+        arr3[iter3++]=middleLeft;
+        arr3[iter3++]=middleRight;
+        if(newsum>sum)
+        {
+            newsum-=arr[middleRight];
+            iter3--;
+        }
+        if(newsum>sum){
+            newsum-=arr[middleLeft];
+            iter3--;
+        }
+        middleRight++;
+        middleLeft--;
+    }
+    sort(arr3,arr3+iter3);
+    return newsum;
+
 }
 int main()
 {
