@@ -22,10 +22,10 @@ int PointStartEnd(int *arr, int types, long long int ppl)//Array, Types People r
     while(Sptr<=Eptr)
     {
         sumnew+=arr[Sptr]+arr[Eptr];
+        arr1[iter1++]=Eptr;
+        arr1[iter1++]=Sptr;
         if(sumnew==ppl)//Checking for Equality Condition
         {
-            arr1[iter1++]=Eptr;
-            arr1[iter1++]=Sptr;
             sort(arr1,arr1+iter1);//Sorting the Array
             return sumnew;
         }
@@ -34,11 +34,10 @@ int PointStartEnd(int *arr, int types, long long int ppl)//Array, Types People r
             sumnew=sumnew-arr[Sptr];
             arr[iter1-1]=arr[iter1];
             iter1--;
-        }
-        if(sumnew<ppl)
+        }if(sumnew>ppl)
         {
-            arr1[iter1++]=Eptr;
-            arr1[iter1++]=Sptr;
+            sumnew=sumnew-arr[Eptr];
+            iter1--;
         }
         if(sumnew<ppl)
         {
@@ -57,11 +56,10 @@ int PointStartEnd2(int *arr, int types, long long int ppl)//Array, Types People 
     while(Sptr<=Eptr)
     {
         sumnew+=arr[Sptr]+arr[Eptr];
+        arr2[iter2++]=Sptr;
+        arr2[iter2++]=Eptr;
         if(sumnew==ppl)//Checking for Equality Condition
         {
-            arr2[iter2++]=Sptr;
-            arr2[iter2++]=Eptr;
-
             sort(arr2,arr2+iter2);//Sorting the Array
             return sumnew;
         }
@@ -70,11 +68,10 @@ int PointStartEnd2(int *arr, int types, long long int ppl)//Array, Types People 
             sumnew=sumnew-arr[Eptr];
             iter2--;
         }
-        if(sumnew<ppl)
+        if(sumnew>ppl)
         {
-            arr2[iter2++]=Sptr;
-            arr2[iter2++]=Eptr;
-
+            sumnew=sumnew-arr[Sptr];
+            iter2--;
         }
         if(sumnew<ppl)
         {
@@ -100,6 +97,14 @@ int main()
         cin>>arr[i];
     }
     //Functions Begin here
+    cout<<"Case 1"<<endl;
+    answer=PointStartEnd(arr, types, ppl);
+    cout<<answer<<endl;
+    for(int i=0;i<iter1;i++)
+    {
+        cout<<arr1[i]<<" ";
+    }
+    cout<<"Case 2"<<endl;
     answer=PointStartEnd2(arr, types, ppl);
     cout<<answer<<endl;
     for(int i=0;i<iter2;i++)
